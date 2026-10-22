@@ -3,6 +3,7 @@ import cors from "cors";
 import authRoutes from "./routes/auth.route.js";
 import userRoutes from "./routes/user.route.js";
 import transactionRoutes from "./routes/transaction.route.js";
+import analyticsRoutes from "./routes/analytics.route.js";
 import cookieParser from "cookie-parser";
 
 const app=express();
@@ -21,6 +22,7 @@ app.use(express.urlencoded({extended:true}));
 app.use('/api/auth',authRoutes);
 app.use('/api/user',userRoutes);
 app.use('/api/transaction',transactionRoutes);
+app.use('/api/analytics',analyticsRoutes);
 
 app.get("/health",(req,res)=>{
     res.status(200).json({message:"Server is running"});
